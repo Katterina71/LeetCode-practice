@@ -6,7 +6,26 @@
  * @return {number[]}
  */
 var frequencySort = function(nums) {
+    let frequencyObj = {} // The keys are the elements, and the values are their frequencies.
+
+    // Count the frequency of each element
+    nums.forEach(num => {
+        frequencyObj[num] = (frequencyObj[num] || 0) +1
+    })
+
+    // Sort the array based on frequency and value 
+    nums.sort((a,b) => {
+        let frequencyA = frequencyObj[a]
+        let frequencyB = frequencyObj[b]
+        if (frequencyA === frequencyB) {
+            return b - a // If frequencies are the same, sort by value in descending order
+        }
+        return frequencyA - frequencyB // Otherwise, sort by frequencies in ascending order
+    })
+    
+    return nums
     
 };
 
-const nums = [1,1,2,2,2,3]
+const nums = [-1,1,-6,4,5,-6,1,4,1]
+console.log(frequencySort(nums))
