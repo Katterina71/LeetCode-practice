@@ -17,6 +17,28 @@
 
 
 var twoSum = function(nums, target) {
+    let number = []
+    for (let i=0; i<nums.length; i++){
+        let check = target - nums[i];
+        let index = nums.findIndex(num => num === check)
+        if (index !== -1 && index !== i){
+            return number = [i,index]
+        }
+    }
+};
+
+const nums=[2,7,11,15]
+const target = 9
+console.log(twoSum(nums,target))
+
+const nums2=[3,2,4]
+const target2 = 6
+console.log(twoSum(nums2,target2))
+
+
+// Second solution 
+
+var twoSum = function(nums, target) {
 
     //Initialize a Map: Create a new Map numMap to store the numbers and their indices.
     const numMap = new Map();
@@ -34,7 +56,7 @@ var twoSum = function(nums, target) {
        return [];
    };
    
-   let nums = [2,7,11,15]
-   let target = 9
+   let nums3 = [2,7,11,15]
+   let target3 = 9
    
-   console.log(twoSum(nums,target))
+   console.log(twoSum(nums3,target3))
