@@ -12,6 +12,7 @@ var longestCommonPrefix = function(strs) {
     for (let i = 1; i < strs.length; i++) {
         // Adjust the prefix until it matches the beginning of the current string
         while (strs[i].indexOf(prefix) !== 0) {
+           // method extracts characters, between two indices (positions), from a string, and returns the substring.
             prefix = prefix.substring(0, prefix.length - 1);
             // If the prefix becomes empty, return an empty string
             if (prefix === "") return "";
